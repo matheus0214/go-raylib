@@ -5,4 +5,4 @@ run: build
 	bin/app
 
 lint:
-	gofmt -w *.go
+	gofmt -s -w .
