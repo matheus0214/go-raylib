@@ -3,6 +3,7 @@ package main
 import (
 	rl "github.com/gen2brain/raylib-go/raylib"
 	"github.com/matheus0214/go-raylib/configs"
+	"github.com/matheus0214/go-raylib/player"
 )
 
 func main() {
@@ -11,11 +12,14 @@ func main() {
 
 	rl.SetTargetFPS(configs.FPS)
 
+	player.LoadPlayer()
+
 	for !rl.WindowShouldClose() {
 		rl.BeginDrawing()
 
 		rl.ClearBackground(rl.White)
-		rl.DrawText("Congrats", 190, 100, 20, rl.Black)
+
+		player.DrawPlayer()
 
 		rl.EndDrawing()
 	}
